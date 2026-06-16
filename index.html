@@ -2,53 +2,88 @@
 <html lang="pt-BR">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Teste Vocacional</title>
 
+
+    <!-- Fonte Google -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- CSS -->
+
     <link rel="stylesheet" href="css/style.css">
+
+
 </head>
+
 
 <body>
 
-    <main class="container">
 
-        <div class="quiz-card">
-    
-            <div class="progresso">
-                Pergunta 1 de 10
-            </div>
-    
-    
-            <h2>
-                Você gosta de resolver problemas usando tecnologia?
-            </h2>
-    
-    
-            <div class="botoes">
-    
-                <button class="resposta">
-                    Sim
-                </button>
-    
-    
-                <button class="resposta">
-                    Não
-                </button>
-    
-            </div>
-    
+<main class="container">
+
+
+    <div class="quiz-card">
+
+
+        <div class="progresso">
+
+            Pergunta 1 de 10
+
         </div>
-    
-    </main>
-    <script src="js/perguntas.js"></script>
-    <script src="js/script.js"></script>
+
+
+
+        <h2 id="pergunta">
+
+        </h2>
+
+
+
+        <div class="botoes">
+
+
+            <button id="sim" class="resposta">
+
+                Sim
+
+            </button>
+
+
+
+            <button id="nao" class="resposta">
+
+                Não
+
+            </button>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<script src="js/perguntas.js"></script>
+
+<script src="js/script.js"></script>
+
 
 </body>
+
 
 </html>

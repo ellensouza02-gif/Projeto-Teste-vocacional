@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quiz Vocacional</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Descubra seu Curso</h1>
+        <div id="quiz-area">
+            <p id="pergunta">Carregando...</p>
+            <div id="opcoes"></div>
+        </div>
+        
+        <div id="camera-area" style="display:none;">
+            <video id="video" width="300" height="300" autoplay playsinline></video><br>
+            <button class="btn" onclick="tirarFoto()">Tirar Foto e Revelar</button>
+        </div>
+        
+        <canvas id="canvas" width="600" height="800"></canvas>
+        <img id="resultado-final" style="width: 100%; display: none;">
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

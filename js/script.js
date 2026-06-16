@@ -1,42 +1,312 @@
+// ===============================
+// PONTUAÇÃO DA MISSÃO
+// ===============================
+
+
 let pontos = {
 
-    dev: 0,
+    dev:0,
 
-    adm: 0,
+    adm:0,
 
-    vendas: 0,
+    vendas:0,
 
-    enf: 0
+    enf:0
 
 };
 
 
 let indice = 0;
 
-
-
-const perguntaTexto = document.getElementById("pergunta");
-
-const contador = document.querySelector(".progresso");
-
-const botaoSim = document.getElementById("sim");
-
-const botaoNao = document.getElementById("nao");
+let fotoCapturada = false;
 
 
 
+// ===============================
+// ELEMENTOS
+// ===============================
 
-// carregar pergunta
+
+const intro =
+document.getElementById("intro");
+
+
+const quiz =
+document.getElementById("quiz");
+
+
+const analise =
+document.getElementById("analise");
+
+
+const camera =
+document.getElementById("camera");
+
+
+const revelacao =
+document.getElementById("revelacao");
+
+
+
+const btnIniciar =
+document.getElementById("btnIniciar");
+
+
+const btnFoto =
+document.getElementById("btnFoto");
+
+
+const fotoInput =
+document.getElementById("fotoInput");
+
+
+
+const previewFoto =
+document.getElementById("previewFoto");
+
+
+const fotoFinal =
+document.getElementById("fotoFinal");
+
+
+
+const perguntaTexto =
+document.getElementById("pergunta");
+
+
+const atual =
+document.getElementById("atual");
+
+
+const total =
+document.getElementById("total");
+
+
+const barra =
+document.getElementById("barra");
+
+
+
+const botaoSim =
+document.getElementById("sim");
+
+
+const botaoNao =
+document.getElementById("nao");
+
+
+
+const profissaoResultado =
+document.getElementById("profissaoResultado");
+
+
+const descricaoResultado =
+document.getElementById("descricaoResultado");
+
+
+
+const btnReiniciar =
+document.getElementById("btnReiniciar");
+
+
+
+
+// ===============================
+// PROFISSÕES
+// ===============================
+
+
+const profissoes = {
+
+
+dev:{
+
+nome:
+"💻 Desenvolvedor de Software",
+
+descricao:
+"Seu perfil indica criatividade, lógica e facilidade para resolver problemas usando tecnologia."
+
+},
+
+
+
+adm:{
+
+nome:
+"📊 Gestor de Negócios",
+
+descricao:
+"Você demonstra organização, estratégia e habilidade para liderar projetos."
+
+},
+
+
+
+vendas:{
+
+nome:
+"🚀 Especialista em Vendas",
+
+descricao:
+"Seu perfil mostra comunicação, influência e facilidade para conectar pessoas."
+
+},
+
+
+
+enf:{
+
+nome:
+"🩺 Profissional da Saúde",
+
+descricao:
+"Você demonstra empatia, cuidado e desejo de ajudar pessoas."
+
+}
+
+
+};
+
+
+
+
+// ===============================
+// INICIAR MISSÃO
+// ===============================
+
+
+btnIniciar.addEventListener("click",()=>{
+
+
+intro.classList.add("oculto");
+
+
+quiz.classList.remove("oculto");
+
+
+carregarPergunta();
+
+
+});
+
+
+
+
+
+// ===============================
+// CARREGAR PERGUNTA
+// ===============================
+
 
 function carregarPergunta(){
 
 
-    perguntaTexto.textContent =
-    perguntas[indice].pergunta;
+perguntaTexto.style.opacity = 0;
 
 
-    contador.textContent =
-    `Pergunta ${indice + 1} de ${perguntas.length}`;
+
+setTimeout(()=>{
+
+
+perguntaTexto.textContent =
+perguntas[indice].pergunta;
+
+
+perguntaTexto.style.opacity = 1;
+
+
+
+},200);
+
+
+
+atual.textContent =
+indice + 1;
+
+
+
+total.textContent =
+perguntas.length;
+
+
+
+atualizarBarra();
+
+
+
+}
+
+
+
+
+// ===============================
+// PROGRESSO
+// ===============================
+
+
+function atualizarBarra(){
+
+
+let valor =
+((indice + 1) / perguntas.length) * 100;
+
+
+
+barra.style.width =
+valor + "%";
+
+
+}
+
+
+
+
+// ===============================
+// RESPOSTAS
+// ===============================
+
+
+botaoSim.addEventListener("click",()=>{
+
+
+responder("sim");
+
+
+});
+
+
+
+botaoNao.addEventListener("click",()=>{
+
+
+responder("nao");
+
+
+});
+
+
+
+
+
+function responder(tipo){
+
+
+let resposta =
+perguntas[indice][tipo];
+
+
+
+Object.keys(resposta).forEach(area=>{
+
+
+pontos[area] += resposta[area];
+
+
+});
+
+
+proximaPergunta();
 
 
 }
@@ -45,68 +315,34 @@ function carregarPergunta(){
 
 
 
-// botão SIM
-
-botaoSim.addEventListener("click", ()=>{
-
-
-    let resposta = perguntas[indice].sim;
-
-
-    pontos[resposta]++;
-
-
-    proximaPergunta();
-
-
-});
-
-
-
-
-
-
-// botão NÃO
-
-botaoNao.addEventListener("click", ()=>{
-
-
-    let resposta = perguntas[indice].nao;
-
-
-    pontos[resposta]++;
-
-
-    proximaPergunta();
-
-
-});
-
-
-
-
-
+// ===============================
+// PRÓXIMA
+// ===============================
 
 
 function proximaPergunta(){
 
 
-    indice++;
+indice++;
 
 
-    if(indice < perguntas.length){
+
+if(indice < perguntas.length){
 
 
-        carregarPergunta();
+carregarPergunta();
 
 
-    }else{
+
+}else{
 
 
-        mostrarResultado();
+iniciarAnalise();
 
 
-    }
+
+}
+
 
 
 }
@@ -115,36 +351,177 @@ function proximaPergunta(){
 
 
 
+// ===============================
+// ANALISE COM SUSPENSE
+// ===============================
+
+
+function iniciarAnalise(){
+
+
+quiz.classList.add("oculto");
+
+
+analise.classList.remove("oculto");
+
+
+
+// apenas analisa,
+// NÃO mostra resultado
+
+
+setTimeout(()=>{
+
+
+analise.classList.add("oculto");
+
+
+camera.classList.remove("oculto");
+
+
+
+},4000);
+
+
+
+}
+
+
+
+
+
+
+
+// ===============================
+// FOTO
+// ===============================
+
+
+btnFoto.addEventListener("click",()=>{
+
+
+fotoInput.click();
+
+
+
+});
+
+
+
+
+
+
+fotoInput.addEventListener("change",(evento)=>{
+
+
+
+const arquivo =
+evento.target.files[0];
+
+
+
+if(arquivo){
+
+
+
+const url =
+URL.createObjectURL(arquivo);
+
+
+
+previewFoto.src = url;
+
+
+fotoFinal.src = url;
+
+
+
+fotoCapturada = true;
+
+
+
+setTimeout(()=>{
+
+
+mostrarResultado();
+
+
+
+},2000);
+
+
+
+}
+
+
+
+});
+
+
+
+
+
+
+
+
+
+// ===============================
+// RESULTADO FINAL
+// ===============================
 
 
 function mostrarResultado(){
 
 
-    let resultado = Object.keys(pontos).reduce((a,b)=>{
+if(!fotoCapturada){
 
+return;
 
-        return pontos[a] > pontos[b] ? a : b;
-
-
-    });
-
-
-
-    console.log("Pontuação final:");
-
-    console.log(pontos);
+}
 
 
 
-    console.log("Resultado:");
-
-    console.log(resultado);
+camera.classList.add("oculto");
 
 
+revelacao.classList.remove("oculto");
 
-    alert(
-        "Seu curso ideal é: " + resultado
-    );
+
+
+let resultado =
+
+Object.keys(pontos).reduce((a,b)=>{
+
+
+return pontos[a] > pontos[b]
+
+? a
+
+: b;
+
+
+});
+
+
+
+let perfil =
+profissoes[resultado];
+
+
+
+profissaoResultado.textContent =
+perfil.nome;
+
+
+
+descricaoResultado.textContent =
+perfil.descricao;
+
+
+
+fotoFinal.src =
+previewFoto.src;
+
 
 
 }
@@ -152,5 +529,43 @@ function mostrarResultado(){
 
 
 
+// ===============================
+// REINICIAR
+// ===============================
 
-carregarPergunta();
+
+btnReiniciar.addEventListener("click",()=>{
+
+
+indice = 0;
+
+
+
+pontos = {
+
+
+dev:0,
+
+adm:0,
+
+vendas:0,
+
+enf:0
+
+
+};
+
+
+
+fotoCapturada=false;
+
+
+
+revelacao.classList.add("oculto");
+
+
+intro.classList.remove("oculto");
+
+
+
+});

@@ -1,85 +1,68 @@
-* {
+:root{
 
-    margin: 0;
+    --roxo:#6C63FF;
+    --azul:#00E5FF;
+    --verde:#10B981;
+    --vermelho:#EF4444;
 
-    padding: 0;
+    --fundo:#020617;
+    --card:#111827;
 
-    box-sizing: border-box;
-
-}
-
-
-
-body {
-
-    font-family: "Poppins", sans-serif;
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    background: #f2f2f2;
+    --texto:#ffffff;
+    --sub:#CBD5E1;
 
 }
 
 
 
+*{
 
-.container {
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 
 }
 
 
 
-
-.quiz-card {
-
-
-    width: 450px;
+body{
 
 
-    background: white;
+    min-height:100vh;
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
 
 
-    padding: 35px;
+    background:
+
+    radial-gradient(
+        circle at top,
+        #6C63FF55,
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at bottom,
+        #00E5FF33,
+        transparent 40%
+    ),
+
+    linear-gradient(
+        135deg,
+        #020617,
+        #0F172A
+    );
 
 
-    border-radius: 20px;
+    display:flex;
 
+    justify-content:center;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    align-items:center;
 
-
-    text-align: center;
-
-
-}
-
-
-
-
-.progresso {
-
-
-    font-size: 14px;
-
-
-    color: #777;
-
-
-    margin-bottom: 25px;
+    padding:20px;
 
 
 }
@@ -87,17 +70,12 @@ body {
 
 
 
-
-.quiz-card h2 {
-
-
-    font-size: 24px;
+.container{
 
 
-    margin-bottom: 35px;
+    width:100%;
 
-
-    line-height: 1.4;
+    max-width:900px;
 
 
 }
@@ -105,13 +83,175 @@ body {
 
 
 
-.botoes {
+/* =========================
+INTRO
+========================= */
 
 
-    display: flex;
+
+.intro{
 
 
-    gap: 20px;
+    text-align:center;
+
+    padding:50px;
+
+    background:
+
+    rgba(17,24,39,.65);
+
+
+    backdrop-filter:blur(20px);
+
+
+    border-radius:35px;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+
+    animation:
+
+    aparecer .8s;
+
+
+}
+
+
+
+
+.logo-missao{
+
+
+    width:120px;
+
+    height:120px;
+
+
+    margin:auto;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    font-size:65px;
+
+
+    border-radius:50%;
+
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--roxo),
+        var(--azul)
+    );
+
+
+    box-shadow:
+
+    0 0 40px var(--azul);
+
+
+
+}
+
+
+
+.intro h1{
+
+
+    margin-top:30px;
+
+
+    font-family:'Bitcount Single';
+
+
+    font-size:3rem;
+
+
+    letter-spacing:4px;
+
+
+    text-shadow:
+
+    0 0 20px var(--azul);
+
+
+
+}
+
+
+
+.intro h2{
+
+
+    margin:25px 0;
+
+
+    color:#A5F3FC;
+
+
+}
+
+
+
+.intro p{
+
+
+    color:var(--sub);
+
+
+    font-size:1.1rem;
+
+
+}
+
+
+
+.objetivos{
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:15px;
+
+
+    flex-wrap:wrap;
+
+
+    margin:30px 0;
+
+
+
+}
+
+
+
+.objetivos span{
+
+
+    padding:12px 20px;
+
+
+    border-radius:20px;
+
+
+    background:#1E293B;
 
 
 }
@@ -120,28 +260,131 @@ body {
 
 
 
-button {
+.aviso{
 
 
-    padding: 15px 30px;
+    margin:25px;
 
 
-    border: none;
+    color:#FDE68A;
 
 
-    border-radius: 50px;
+}
 
 
-    cursor: pointer;
 
 
-    font-size: 18px;
+/* =========================
+BOTÕES
+========================= */
 
 
-    font-family: "Poppins", sans-serif;
+
+.btn-acao,
+.btn-secundario{
 
 
-    font-weight: 600;
+    border:none;
+
+
+    padding:18px 35px;
+
+
+    border-radius:20px;
+
+
+    cursor:pointer;
+
+
+    font-size:1.1rem;
+
+
+    font-weight:700;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+.btn-acao{
+
+
+    color:white;
+
+
+    background:
+
+
+    linear-gradient(
+
+    135deg,
+
+    var(--roxo),
+
+    var(--azul)
+
+    );
+
+
+    box-shadow:
+
+    0 0 30px #00E5FF55;
+
+
+
+}
+
+
+
+.btn-acao:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+.btn-secundario{
+
+
+background:#334155;
+
+color:white;
+
+
+}
+
+
+
+
+/* =========================
+QUIZ
+========================= */
+
+
+
+.quiz-card{
+
+
+    background:
+
+    rgba(17,24,39,.75);
+
+
+    backdrop-filter:blur(20px);
+
+
+    padding:40px;
+
+
+    border-radius:35px;
 
 
 }
@@ -150,19 +393,16 @@ button {
 
 
 
-.resposta {
+.progresso-texto{
 
 
-    flex: 1;
+    font-family:'Bitcount Single';
 
 
-    background: #111;
+    color:#A5F3FC;
 
 
-    color: white;
-
-
-    transition: 0.3s;
+    margin-bottom:10px;
 
 
 }
@@ -171,10 +411,539 @@ button {
 
 
 
-.resposta:hover {
+.barra{
 
 
-    transform: translateY(-3px);
+    height:14px;
+
+
+    background:#1E293B;
+
+
+    border-radius:20px;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+.barra-preenchimento{
+
+
+    height:100%;
+
+
+    width:0%;
+
+
+    background:
+
+
+    linear-gradient(
+
+    90deg,
+
+    var(--roxo),
+
+    var(--azul)
+
+    );
+
+
+    transition:.5s;
+
+
+}
+
+
+
+
+#pergunta{
+
+
+    text-align:center;
+
+
+    font-size:2rem;
+
+
+    margin:50px 0;
+
+
+}
+
+
+
+
+
+.botoes{
+
+
+    display:grid;
+
+
+    grid-template-columns:1fr 1fr;
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+.resposta{
+
+
+    border:none;
+
+
+    padding:20px;
+
+
+    border-radius:25px;
+
+
+    cursor:pointer;
+
+
+    font-size:1.2rem;
+
+
+    font-weight:bold;
+
+
+    color:white;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.resposta:hover{
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+
+.resposta-sim{
+
+
+background:
+
+linear-gradient(
+135deg,
+#10B981,
+#34D399
+);
+
+
+}
+
+
+
+
+.resposta-nao{
+
+
+background:
+
+linear-gradient(
+135deg,
+#EF4444,
+#F87171
+);
+
+
+}
+
+
+
+
+
+/* =========================
+ANÁLISE
+========================= */
+
+
+
+.analise{
+
+
+text-align:center;
+
+
+background:
+
+rgba(17,24,39,.8);
+
+
+padding:50px;
+
+
+border-radius:35px;
+
+
+}
+
+
+
+.etapas p{
+
+
+margin:15px;
+
+
+font-size:1.2rem;
+
+
+color:#A5F3FC;
+
+
+}
+
+
+
+.spinner{
+
+
+width:80px;
+
+height:80px;
+
+
+border:
+
+8px solid #ffffff22;
+
+
+border-top:
+
+8px solid var(--azul);
+
+
+border-radius:50%;
+
+
+margin:30px auto;
+
+
+animation:girar 1s linear infinite;
+
+
+}
+
+
+
+
+
+@keyframes girar{
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+
+
+
+/* =========================
+CAMERA
+========================= */
+
+
+
+.camera{
+
+
+text-align:center;
+
+
+background:
+
+rgba(17,24,39,.75);
+
+
+padding:40px;
+
+
+border-radius:35px;
+
+
+}
+
+
+
+
+.preview img{
+
+
+margin-top:25px;
+
+
+max-width:300px;
+
+
+border-radius:30px;
+
+
+border:3px solid var(--azul);
+
+
+box-shadow:
+
+0 0 30px var(--azul);
+
+
+}
+
+
+
+
+/* =========================
+RESULTADO
+========================= */
+
+
+
+.resultado{
+
+
+text-align:center;
+
+
+background:
+
+rgba(17,24,39,.85);
+
+
+padding:50px;
+
+
+border-radius:40px;
+
+
+animation:
+
+revelar 1s;
+
+
+}
+
+
+
+
+.resultado h2{
+
+
+font-family:'Bitcount Single';
+
+
+color:#A5F3FC;
+
+
+}
+
+
+
+
+#profissaoResultado{
+
+
+font-family:'Bitcount Single';
+
+
+font-size:2.8rem;
+
+
+margin:25px;
+
+
+color:var(--azul);
+
+
+text-shadow:
+
+0 0 20px var(--azul);
+
+
+}
+
+
+
+#descricaoResultado{
+
+
+font-size:1.1rem;
+
+
+color:var(--sub);
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+#fotoFinal{
+
+
+width:100%;
+
+
+max-width:450px;
+
+
+border-radius:30px;
+
+
+border:
+
+4px solid var(--azul);
+
+
+box-shadow:
+
+0 0 40px var(--azul);
+
+
+}
+
+
+
+
+
+/* =========================
+UTILIDADES
+========================= */
+
+
+
+.oculto{
+
+display:none;
+
+}
+
+
+
+@keyframes aparecer{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+
+}
+
+
+
+@keyframes revelar{
+
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:700px){
+
+
+
+.intro h1{
+
+
+font-size:2rem;
+
+
+}
+
+
+
+#pergunta{
+
+
+font-size:1.4rem;
+
+
+}
+
+
+
+.botoes{
+
+
+grid-template-columns:1fr;
+
+
+}
+
+
+
+.intro{
+
+
+padding:30px;
+
+
+}
 
 
 }

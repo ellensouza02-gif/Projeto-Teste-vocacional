@@ -3,24 +3,34 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Teste Vocacional</title>
-
-
-    <!-- Fonte Google -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <!-- CSS -->
+<meta name="description"
+content="Missão Profissional - descubra caminhos para seu futuro através de uma experiência interativa">
 
-    <link rel="stylesheet" href="css/style.css">
+
+<meta name="theme-color" content="#6C63FF">
+
+
+<title>
+Missão Profissional - O futuro será revelado
+</title>
+
+
+<!-- Fontes -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -32,46 +42,382 @@
 <main class="container">
 
 
-    <div class="quiz-card">
+
+<!-- =========================
+INTRO
+========================= -->
 
 
-        <div class="progresso">
-
-            Pergunta 1 de 10
-
-        </div>
+<section id="intro" class="intro">
 
 
+<div class="logo-missao">
 
-        <h2 id="pergunta">
+🚀
 
-        </h2>
-
-
-
-        <div class="botoes">
+</div>
 
 
-            <button id="sim" class="resposta">
-
-                Sim
-
-            </button>
+<h1>
+MISSÃO PROFISSIONAL
+</h1>
 
 
+<h2>
 
-            <button id="nao" class="resposta">
+O futuro não é encontrado.<br>
+Ele é revelado.
 
-                Não
-
-            </button>
-
-
-
-        </div>
+</h2>
 
 
-    </div>
+<p>
+
+Descubra seus talentos, interesses e habilidades
+que podem indicar caminhos para seu futuro.
+
+</p>
+
+
+
+<div class="objetivos">
+
+
+<span>
+🎯 Responder perguntas
+</span>
+
+
+<span>
+🧠 Analisar perfil
+</span>
+
+
+<span>
+📸 Revelar identidade
+</span>
+
+
+</div>
+
+
+
+<p class="aviso">
+
+
+⚠️ Sua vocação só será revelada
+após a captura da sua foto.
+
+
+</p>
+
+
+
+<button id="btnIniciar" class="btn-acao">
+
+🚀 Iniciar Missão
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+<!-- =========================
+QUIZ
+========================= -->
+
+
+<section id="quiz" class="quiz-card oculto">
+
+
+<div class="progresso-container">
+
+
+<div class="progresso-texto">
+
+MISSÃO
+
+<span id="atual">
+1
+</span>
+
+DE
+
+<span id="total">
+10
+</span>
+
+
+</div>
+
+
+
+<div class="barra">
+
+<div 
+id="barra"
+class="barra-preenchimento">
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<h2 id="pergunta">
+
+Carregando missão...
+
+</h2>
+
+
+
+
+<div class="botoes">
+
+
+<button 
+id="sim"
+class="resposta resposta-sim">
+
+👍 Sim
+
+</button>
+
+
+
+<button 
+id="nao"
+class="resposta resposta-nao">
+
+👎 Não
+
+</button>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =========================
+ANALISE
+========================= -->
+
+
+<section id="analise" class="analise oculto">
+
+
+<h1>
+
+🤖 Analisando Perfil
+
+</h1>
+
+
+
+<div class="etapas">
+
+
+<p>
+✓ Interesses analisados
+</p>
+
+
+<p>
+✓ Habilidades identificadas
+</p>
+
+
+<p>
+✓ Perfil profissional criado
+</p>
+
+
+<p>
+✓ Cenário preparado
+</p>
+
+
+
+</div>
+
+
+
+<div class="spinner">
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- =========================
+FOTO
+========================= -->
+
+
+<section id="camera" class="camera oculto">
+
+
+<h1>
+
+📸 Última etapa
+
+</h1>
+
+
+
+<h2>
+
+Capture sua identidade
+
+</h2>
+
+
+
+<p>
+
+Sua imagem será usada para criar
+uma experiência personalizada
+do seu futuro profissional.
+
+</p>
+
+
+
+<button id="btnFoto" class="btn-acao">
+
+📷 Tirar Foto
+
+</button>
+
+
+
+<input
+type="file"
+id="fotoInput"
+accept="image/*"
+capture="user"
+hidden>
+
+
+
+<div class="preview">
+
+<img 
+id="previewFoto">
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+RESULTADO
+========================= -->
+
+
+<section id="revelacao" class="resultado oculto">
+
+
+<h2>
+
+RELATÓRIO DA MISSÃO
+
+</h2>
+
+
+<div class="efeito-revelacao">
+
+
+<h1>
+
+Sua vocação é:
+
+</h1>
+
+
+
+<h3 id="profissaoResultado">
+
+</h3>
+
+
+<p id="descricaoResultado">
+
+</p>
+
+
+
+<img 
+id="fotoFinal"
+alt="Resultado final">
+
+
+</div>
+
+
+
+
+<button class="btn-acao">
+
+📤 Compartilhar
+
+</button>
+
+
+
+<button id="btnReiniciar" class="btn-secundario">
+
+🔄 Nova Missão
+
+</button>
+
+
+
+
+</section>
+
+
 
 
 </main>
@@ -84,6 +430,5 @@
 
 
 </body>
-
 
 </html>

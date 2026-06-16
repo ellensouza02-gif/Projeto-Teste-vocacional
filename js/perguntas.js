@@ -1,72 +1,284 @@
 const perguntas = [
 
-    {
-        pergunta: "Você gosta de criar soluções usando tecnologia?",
-        sim: "dev",
-        nao: "vendas"
-    },
+
+{
+pergunta:
+
+"Você gosta de criar soluções e resolver problemas usando lógica?",
 
 
-    {
-        pergunta: "Você gosta de organizar equipes e processos?",
-        sim: "adm",
-        nao: "dev"
-    },
+sim:{
+dev:3
+},
 
 
-    {
-        pergunta: "Você gosta de conversar e convencer pessoas?",
-        sim: "vendas",
-        nao: "enf"
-    },
+nao:{
+vendas:1,
+adm:1
+}
+
+},
 
 
-    {
-        pergunta: "Você sente satisfação ajudando pessoas?",
-        sim: "enf",
-        nao: "dev"
-    },
+
+{
+pergunta:
+
+"Você prefere trabalhar criando coisas novas no computador?",
 
 
-    {
-        pergunta: "Você gosta de computadores e programação?",
-        sim: "dev",
-        nao: "adm"
-    },
+sim:{
+dev:3
+},
 
 
-    {
-        pergunta: "Você prefere planejar antes de executar?",
-        sim: "adm",
-        nao: "vendas"
-    },
+nao:{
+vendas:1,
+enf:1
+}
+
+},
 
 
-    {
-        pergunta: "Você gosta de trabalhar com metas e resultados?",
-        sim: "vendas",
-        nao: "enf"
-    },
+
+{
+pergunta:
+
+"Você gosta de organizar pessoas, tarefas e projetos?",
 
 
-    {
-        pergunta: "Você tem interesse pela área da saúde?",
-        sim: "enf",
-        nao: "adm"
-    },
+sim:{
+
+adm:3
+
+},
 
 
-    {
-        pergunta: "Você gosta de aprender novas tecnologias?",
-        sim: "dev",
-        nao: "vendas"
-    },
+nao:{
+
+dev:1,
+vendas:1
+
+}
+
+},
 
 
-    {
-        pergunta: "Você gosta de cuidar e orientar pessoas?",
-        sim: "enf",
-        nao: "adm"
-    }
+
+{
+pergunta:
+
+"Você gosta de conversar, apresentar ideias e convencer pessoas?",
+
+
+sim:{
+
+vendas:3
+
+},
+
+
+nao:{
+
+dev:1,
+enf:1
+
+}
+
+},
+
+
+
+{
+pergunta:
+
+"Você sente satisfação ajudando pessoas?",
+
+
+sim:{
+
+enf:3
+
+},
+
+
+nao:{
+
+dev:1,
+adm:1
+
+}
+
+},
+
+
+
+{
+pergunta:
+
+"Você se imagina liderando uma equipe no futuro?",
+
+
+sim:{
+
+adm:3,
+vendas:1
+
+},
+
+
+nao:{
+
+dev:1,
+enf:1
+
+}
+
+},
+
+
+
+{
+pergunta:
+
+"Você gosta de aprender novas tecnologias e ferramentas?",
+
+
+sim:{
+
+dev:3
+
+},
+
+
+nao:{
+
+enf:1,
+adm:1
+
+}
+
+},
+
+
+
+{
+pergunta:
+
+"Você gosta de trabalhar com metas e desafios?",
+
+
+sim:{
+
+vendas:3,
+adm:1
+
+},
+
+
+nao:{
+
+enf:1
+
+}
+
+},
+
+
+
+{
+pergunta:
+
+"Você tem facilidade em ouvir e entender as necessidades das pessoas?",
+
+
+sim:{
+
+enf:3,
+vendas:1
+
+},
+
+
+nao:{
+
+dev:1
+
+}
+
+},
+
+
+
+{
+pergunta:
+
+"Qual ambiente parece mais interessante para você?",
+
+
+sim:{
+
+adm:2
+
+},
+
+
+nao:{
+
+dev:1,
+enf:1
+
+}
+
+},
+
+
+
+{
+pergunta:
+
+"Você prefere criar estratégias ou executar tarefas técnicas?",
+
+
+sim:{
+
+adm:2
+
+},
+
+
+nao:{
+
+dev:2
+
+}
+
+},
+
+
+
+{
+pergunta:
+
+"Você gosta de imaginar novas ideias e projetos?",
+
+
+sim:{
+
+dev:1,
+vendas:1,
+adm:1
+
+},
+
+
+nao:{
+
+enf:1
+
+}
+
+}
+
 
 ];

@@ -1,26 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teste Vocacional</title>
+
     <link rel="stylesheet" href="css/style.css">
-    <title>Quiz Vocacional</title>
 </head>
+
 <body>
-    <div id="container">
-        <h1>Descubra seu Curso</h1>
-        <div id="quiz-area">
-            <p id="pergunta">Carregando...</p>
-            <div id="opcoes"></div>
-        </div>
-        
-        <div id="camera-area" style="display:none;">
-            <video id="video" width="300" height="300" autoplay playsinline></video><br>
-            <button class="btn" onclick="tirarFoto()">Tirar Foto e Revelar</button>
-        </div>
-        
-        <canvas id="canvas" width="600" height="800"></canvas>
-        <img id="resultado-final" style="width: 100%; display: none;">
-    </div>
+
+    <main class="container">
+
+        <h1>
+            Descubra seu curso ideal
+        </h1>
+
+        <p>
+            Responda 10 perguntas e descubra a área que combina com você.
+        </p>
+
+        <button id="iniciar">
+            Começar teste
+        </button>
+
+    </main>
+
+
     <script src="js/script.js"></script>
+
 </body>
+
 </html>

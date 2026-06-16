@@ -483,7 +483,6 @@ return;
 
 camera.classList.add("oculto");
 
-
 revelacao.classList.remove("oculto");
 
 
@@ -492,26 +491,18 @@ let resultado =
 
 Object.keys(pontos).reduce((a,b)=>{
 
-
-return pontos[a] > pontos[b]
-
-? a
-
-: b;
-
+return pontos[a] > pontos[b] ? a : b;
 
 });
 
 
 
-let perfil =
-profissoes[resultado];
+let perfil = profissoes[resultado];
 
 
 
 profissaoResultado.textContent =
 perfil.nome;
-
 
 
 descricaoResultado.textContent =

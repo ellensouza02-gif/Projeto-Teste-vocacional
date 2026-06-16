@@ -61,3 +61,67 @@ button {
     font-size: 18px;
 
 }
+.quiz-card {
+
+    width: 450px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+}
+
+
+.progresso {
+
+    font-size: 14px;
+
+    color: #777;
+
+    margin-bottom: 25px;
+
+}
+
+
+.quiz-card h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 35px;
+
+    line-height: 1.4;
+
+}
+
+
+.botoes {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.resposta {
+
+    flex: 1;
+
+    background: #111;
+
+    color: white;
+
+    transition: 0.3s;
+
+}
+
+
+.resposta:hover {
+
+    transform: translateY(-3px);
+
+}

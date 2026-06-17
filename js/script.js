@@ -1,562 +1,104 @@
-// ===============================
-// PONTUAÇÃO DA MISSÃO
-// ===============================
-
-
-let pontos = {
-
-    dev:0,
-
-    adm:0,
-
-    vendas:0,
-
-    enf:0
-
-};
-
-
+let pontos = {dev:0, adm:0, vendas:0, enf:0};
 let indice = 0;
-
 let fotoCapturada = false;
 
-
-
-// ===============================
-// ELEMENTOS
-// ===============================
-
-
-const intro =
-document.getElementById("intro");
-
-
-const quiz =
-document.getElementById("quiz");
-
-
-const analise =
-document.getElementById("analise");
-
-
-const camera =
-document.getElementById("camera");
-
-
-const revelacao =
-document.getElementById("revelacao");
-
-
-
-const btnIniciar =
-document.getElementById("btnIniciar");
-
-
-const btnFoto =
-document.getElementById("btnFoto");
-
-
-const fotoInput =
-document.getElementById("fotoInput");
-
-
-
-const previewFoto =
-document.getElementById("previewFoto");
-
-
-const fotoFinal =
-document.getElementById("fotoFinal");
-
-
-
-const perguntaTexto =
-document.getElementById("pergunta");
-
-
-const atual =
-document.getElementById("atual");
-
-
-const total =
-document.getElementById("total");
-
-
-const barra =
-document.getElementById("barra");
-
-
-
-const botaoSim =
-document.getElementById("sim");
-
-
-const botaoNao =
-document.getElementById("nao");
-
-
-
-const profissaoResultado =
-document.getElementById("profissaoResultado");
-
-
-const descricaoResultado =
-document.getElementById("descricaoResultado");
-
-
-
-const btnReiniciar =
-document.getElementById("btnReiniciar");
-
-
-
-
-// ===============================
-// PROFISSÕES
-// ===============================
-
-
-const profissoes = {
-
-
-dev:{
-
-nome:
-"💻 Desenvolvedor de Software",
-
-descricao:
-"Seu perfil indica criatividade, lógica e facilidade para resolver problemas usando tecnologia."
-
-},
-
-
-
-adm:{
-
-nome:
-"📊 Gestor de Negócios",
-
-descricao:
-"Você demonstra organização, estratégia e habilidade para liderar projetos."
-
-},
-
-
-
-vendas:{
-
-nome:
-"🚀 Especialista em Vendas",
-
-descricao:
-"Seu perfil mostra comunicação, influência e facilidade para conectar pessoas."
-
-},
-
-
-
-enf:{
-
-nome:
-"🩺 Profissional da Saúde",
-
-descricao:
-"Você demonstra empatia, cuidado e desejo de ajudar pessoas."
-
-}
-
-
-};
-
-
-
-
-// ===============================
-// INICIAR MISSÃO
-// ===============================
-
+const intro = document.getElementById("intro");
+const quiz = document.getElementById("quiz");
+const analise = document.getElementById("analise");
+const camera = document.getElementById("camera");
+const revelacao = document.getElementById("revelacao");
+
+const btnIniciar = document.getElementById("btnIniciar");
+const btnFoto = document.getElementById("btnFoto");
+const fotoInput = document.getElementById("fotoInput");
+
+const pergunta = document.getElementById("pergunta");
+const barra = document.getElementById("barra");
+
+const atual = document.getElementById("atual");
+const total = document.getElementById("total");
+
+const previewFoto = document.getElementById("previewFoto");
+const fotoFinal = document.getElementById("fotoFinal");
+
+const profissaoResultado = document.getElementById("profissaoResultado");
+const descricaoResultado = document.getElementById("descricaoResultado");
 
 btnIniciar.addEventListener("click",()=>{
-
-
 intro.classList.add("oculto");
-
-
 quiz.classList.remove("oculto");
-
-
-carregarPergunta();
-
-
+carregar();
 });
 
+function carregar(){
+pergunta.textContent = perguntas[indice].pergunta;
+atual.textContent = indice+1;
+total.textContent = perguntas.length;
 
-
-
-
-// ===============================
-// CARREGAR PERGUNTA
-// ===============================
-
-
-function carregarPergunta(){
-
-
-perguntaTexto.style.opacity = 0;
-
-
-
-setTimeout(()=>{
-
-
-perguntaTexto.textContent =
-perguntas[indice].pergunta;
-
-
-perguntaTexto.style.opacity = 1;
-
-
-
-},200);
-
-
-
-atual.textContent =
-indice + 1;
-
-
-
-total.textContent =
-perguntas.length;
-
-
-
-atualizarBarra();
-
-
-
+barra.style.width = ((indice+1)/perguntas.length)*100 + "%";
 }
-
-
-
-
-// ===============================
-// PROGRESSO
-// ===============================
-
-
-function atualizarBarra(){
-
-
-let valor =
-((indice + 1) / perguntas.length) * 100;
-
-
-
-barra.style.width =
-valor + "%";
-
-
-}
-
-
-
-
-// ===============================
-// RESPOSTAS
-// ===============================
-
-
-botaoSim.addEventListener("click",()=>{
-
-
-responder("sim");
-
-
-});
-
-
-
-botaoNao.addEventListener("click",()=>{
-
-
-responder("nao");
-
-
-});
-
-
-
-
 
 function responder(tipo){
-
-
-let resposta =
-perguntas[indice][tipo];
-
-
-
-Object.keys(resposta).forEach(area=>{
-
-
-pontos[area] += resposta[area];
-
-
+let r = perguntas[indice][tipo];
+Object.keys(r).forEach(k=>{
+pontos[k]+=r[k];
 });
-
-
-proximaPergunta();
-
-
-}
-
-
-
-
-
-// ===============================
-// PRÓXIMA
-// ===============================
-
-
-function proximaPergunta(){
-
 
 indice++;
 
-
-
 if(indice < perguntas.length){
-
-
-carregarPergunta();
-
-
-
+carregar();
 }else{
-
-
-iniciarAnalise();
-
-
-
+analisar();
+}
 }
 
+document.getElementById("sim").onclick=()=>responder("sim");
+document.getElementById("nao").onclick=()=>responder("nao");
 
-
-}
-
-
-
-
-
-// ===============================
-// ANALISE COM SUSPENSE
-// ===============================
-
-
-function iniciarAnalise(){
-
-
+function analisar(){
 quiz.classList.add("oculto");
-
-
 analise.classList.remove("oculto");
 
-
-
-// apenas analisa,
-// NÃO mostra resultado
-
-
 setTimeout(()=>{
-
-
 analise.classList.add("oculto");
-
-
 camera.classList.remove("oculto");
-
-
-
-},4000);
-
-
-
+},3000);
 }
 
+btnFoto.onclick=()=>fotoInput.click();
 
-
-
-
-
-
-// ===============================
-// FOTO
-// ===============================
-
-
-btnFoto.addEventListener("click",()=>{
-
-
-fotoInput.click();
-
-
-
-});
-
-
-
-
-
-
-fotoInput.addEventListener("change",(evento)=>{
-
-
-
-const arquivo =
-evento.target.files[0];
-
-
-
-if(arquivo){
-
-
-
-const url =
-URL.createObjectURL(arquivo);
-
-
+fotoInput.onchange=(e)=>{
+let file = e.target.files[0];
+let url = URL.createObjectURL(file);
 
 previewFoto.src = url;
-
-
 fotoFinal.src = url;
-
-
 
 fotoCapturada = true;
 
-
-
 setTimeout(()=>{
-
-
-mostrarResultado();
-
-
-
-},2000);
-
-
-
-}
-
-
-
-});
-
-
-
-
-
-
-
-
-
-// ===============================
-// RESULTADO FINAL
-// ===============================
-
-
-function mostrarResultado(){
-
-
-if(!fotoCapturada){
-
-return;
-
-}
-
-
-
-camera.classList.add("oculto");
-
-revelacao.classList.remove("oculto");
-
-
-
-let resultado =
-
-Object.keys(pontos).reduce((a,b)=>{
-
-return pontos[a] > pontos[b] ? a : b;
-
-});
-
-
-
-let perfil = profissoes[resultado];
-
-
-
-profissaoResultado.textContent =
-perfil.nome;
-
-
-descricaoResultado.textContent =
-perfil.descricao;
-
-
-
-fotoFinal.src =
-previewFoto.src;
-
-
-
-}
-
-
-
-
-// ===============================
-// REINICIAR
-// ===============================
-
-
-btnReiniciar.addEventListener("click",()=>{
-
-
-indice = 0;
-
-
-
-pontos = {
-
-
-dev:0,
-
-adm:0,
-
-vendas:0,
-
-enf:0
-
-
+resultado();
+},1500);
 };
 
+function resultado(){
+if(!fotoCapturada) return;
 
+camera.classList.add("oculto");
+revelacao.classList.remove("oculto");
 
-fotoCapturada=false;
-
-
-
-revelacao.classList.add("oculto");
-
-
-intro.classList.remove("oculto");
-
-
-
+let res = Object.keys(pontos).reduce((a,b)=>{
+return pontos[a]>pontos[b]?a:b;
 });
+
+const nomes = {
+dev:"💻 Desenvolvedor",
+adm:"📊 Gestor",
+vendas:"🚀 Vendas",
+enf:"🩺 Saúde"
+};
+
+profissaoResultado.textContent = nomes[res];
+descricaoResultado.textContent = "Resultado gerado com base no seu perfil.";
+}

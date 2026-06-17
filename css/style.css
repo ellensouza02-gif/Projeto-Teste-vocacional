@@ -1,952 +1,134 @@
-:root{
-
-    --roxo:#6C63FF;
-    --azul:#00E5FF;
-    --verde:#10B981;
-    --vermelho:#EF4444;
-
-    --fundo:#020617;
-    --card:#111827;
-
-    --texto:#ffffff;
-    --sub:#CBD5E1;
-
-}
-
-
-
 *{
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
 }
-
-
 
 body{
-
-
-    min-height:100vh;
-
-    font-family:'Poppins',sans-serif;
-
-    color:white;
-
-
-    background:
-
-    radial-gradient(
-        circle at top,
-        #6C63FF55,
-        transparent 35%
-    ),
-
-    radial-gradient(
-        circle at bottom,
-        #00E5FF33,
-        transparent 40%
-    ),
-
-    linear-gradient(
-        135deg,
-        #020617,
-        #0F172A
-    );
-
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:20px;
-
-
-}
-
-
-
-
-.container{
-
-
-    width:100%;
-
-    max-width:900px;
-
-
-}
-
-
-
-
-/* =========================
-INTRO
-========================= */
-
-
-
-.intro{
-
-
-    text-align:center;
-
-    padding:50px;
-
-    background:
-
-    rgba(17,24,39,.65);
-
-
-    backdrop-filter:blur(20px);
-
-
-    border-radius:35px;
-
-
-    border:
-
-    1px solid rgba(255,255,255,.1);
-
-
-    animation:
-
-    aparecer .8s;
-
-
-}
-
-
-
-
-.logo-missao{
-
-
-    width:120px;
-
-    height:120px;
-
-
-    margin:auto;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    font-size:65px;
-
-
-    border-radius:50%;
-
-
-
-    background:
-
-    linear-gradient(
-        135deg,
-        var(--roxo),
-        var(--azul)
-    );
-
-
-    box-shadow:
-
-    0 0 40px var(--azul);
-
-
-
-}
-
-
-
-.intro h1{
-
-
-    margin-top:30px;
-
-
-    font-family:'Bitcount Single';
-
-
-    font-size:3rem;
-
-
-    letter-spacing:4px;
-
-
-    text-shadow:
-
-    0 0 20px var(--azul);
-
-
-
-}
-
-
-
-.intro h2{
-
-
-    margin:25px 0;
-
-
-    color:#A5F3FC;
-
-
-}
-
-
-
-.intro p{
-
-
-    color:var(--sub);
-
-
-    font-size:1.1rem;
-
-
-}
-
-
-
-.objetivos{
-
-
-    display:flex;
-
-
-    justify-content:center;
-
-
-    gap:15px;
-
-
-    flex-wrap:wrap;
-
-
-    margin:30px 0;
-
-
-
-}
-
-
-
-.objetivos span{
-
-
-    padding:12px 20px;
-
-
-    border-radius:20px;
-
-
-    background:#1E293B;
-
-
-}
-
-
-
-
-
-.aviso{
-
-
-    margin:25px;
-
-
-    color:#FDE68A;
-
-
-}
-
-
-
-
-/* =========================
-BOTÕES
-========================= */
-
-
-
-.btn-acao,
-.btn-secundario{
-
-
-    border:none;
-
-
-    padding:18px 35px;
-
-
-    border-radius:20px;
-
-
-    cursor:pointer;
-
-
-    font-size:1.1rem;
-
-
-    font-weight:700;
-
-
-    transition:.3s;
-
-
-}
-
-
-
-
-.btn-acao{
-
-
-    color:white;
-
-
-    background:
-
-
-    linear-gradient(
-
-    135deg,
-
-    var(--roxo),
-
-    var(--azul)
-
-    );
-
-
-    box-shadow:
-
-    0 0 30px #00E5FF55;
-
-
-
-}
-
-
-
-.btn-acao:hover{
-
-
-    transform:translateY(-5px);
-
-
-}
-
-
-
-
-.btn-secundario{
-
-
-background:#334155;
-
+background:#020617;
 color:white;
-
-
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
 }
 
-
-
-
-/* =========================
-QUIZ
-========================= */
-
-
-
-.quiz-card{
-
-
-    background:
-
-    rgba(17,24,39,.75);
-
-
-    backdrop-filter:blur(20px);
-
-
-    padding:40px;
-
-
-    border-radius:35px;
-
-
+/* QUADROS */
+.quadro{
+width:100%;
+max-width:800px;
+margin:auto;
+background:rgba(17,24,39,.75);
+border-radius:30px;
+padding:40px;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 25px 80px rgba(0,0,0,.5);
+backdrop-filter:blur(20px);
+animation:entrar .6s ease;
 }
 
-
-
-
-
-.progresso-texto{
-
-
-    font-family:'Bitcount Single';
-
-
-    color:#A5F3FC;
-
-
-    margin-bottom:10px;
-
-
+@keyframes entrar{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
 }
 
-
-
-
-
-.barra{
-
-
-    height:14px;
-
-
-    background:#1E293B;
-
-
-    border-radius:20px;
-
-
-    overflow:hidden;
-
-
+/* INTRO */
+.intro{
+text-align:center;
 }
 
-
-
-
-.barra-preenchimento{
-
-
-    height:100%;
-
-
-    width:0%;
-
-
-    background:
-
-
-    linear-gradient(
-
-    90deg,
-
-    var(--roxo),
-
-    var(--azul)
-
-    );
-
-
-    transition:.5s;
-
-
+.icone-quadro{
+font-size:60px;
+margin-bottom:20px;
 }
 
-
-
-
-#pergunta{
-
-
-    text-align:center;
-
-
-    font-size:2rem;
-
-
-    margin:50px 0;
-
-
+h1{
+font-size:2rem;
+margin-bottom:10px;
 }
 
+h2{
+color:#67e8f9;
+margin-bottom:20px;
+}
 
+/* BOTÕES */
+.btn-acao{
+background:linear-gradient(135deg,#6C63FF,#00E5FF);
+border:none;
+padding:15px 25px;
+border-radius:20px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+}
 
-
-
+/* QUIZ */
 .botoes{
-
-
-    display:grid;
-
-
-    grid-template-columns:1fr 1fr;
-
-
-    gap:20px;
-
-
+display:flex;
+gap:10px;
+margin-top:20px;
 }
-
-
-
 
 .resposta{
-
-
-    border:none;
-
-
-    padding:20px;
-
-
-    border-radius:25px;
-
-
-    cursor:pointer;
-
-
-    font-size:1.2rem;
-
-
-    font-weight:bold;
-
-
-    color:white;
-
-
-    transition:.3s;
-
-
+flex:1;
+padding:15px;
+border:none;
+border-radius:15px;
+cursor:pointer;
 }
 
+.resposta-sim{background:#10b981;color:white;}
+.resposta-nao{background:#ef4444;color:white;}
 
-
-.resposta:hover{
-
-
-    transform:scale(1.05);
-
-
+.barra{
+height:10px;
+background:#1f2937;
+border-radius:10px;
+margin:15px 0;
+overflow:hidden;
 }
 
-
-
-
-.resposta-sim{
-
-
-background:
-
-linear-gradient(
-135deg,
-#10B981,
-#34D399
-);
-
-
+.barra-preenchimento{
+height:100%;
+width:0%;
+background:linear-gradient(90deg,#6C63FF,#00E5FF);
 }
 
-
-
-
-.resposta-nao{
-
-
-background:
-
-linear-gradient(
-135deg,
-#EF4444,
-#F87171
-);
-
-
-}
-
-
-
-
-
-/* =========================
-ANÁLISE
-========================= */
-
-
-
-.analise{
-
-
-text-align:center;
-
-
-background:
-
-rgba(17,24,39,.8);
-
-
-padding:50px;
-
-
-border-radius:35px;
-
-
-}
-
-
-
-.etapas p{
-
-
-margin:15px;
-
-
-font-size:1.2rem;
-
-
-color:#A5F3FC;
-
-
-}
-
-
-
+/* ANALISE */
 .spinner{
-
-
-width:80px;
-
-height:80px;
-
-
-border:
-
-8px solid #ffffff22;
-
-
-border-top:
-
-8px solid var(--azul);
-
-
+width:50px;
+height:50px;
+border:5px solid #333;
+border-top:5px solid #00E5FF;
 border-radius:50%;
-
-
-margin:30px auto;
-
-
-animation:girar 1s linear infinite;
-
-
+margin:20px auto;
+animation:spin 1s linear infinite;
 }
 
-
-
-
-
-@keyframes girar{
-
-
-to{
-
-transform:rotate(360deg);
-
+@keyframes spin{
+to{transform:rotate(360deg);}
 }
 
-}
-
-
-
-
-
-
-/* =========================
-CAMERA
-========================= */
-
-
-
-.camera{
-
-
-text-align:center;
-
-
-background:
-
-rgba(17,24,39,.75);
-
-
-padding:40px;
-
-
-border-radius:35px;
-
-
-}
-
-
-
-
+/* CAMERA */
 .preview img{
-
-
-margin-top:25px;
-
-
-max-width:300px;
-
-
-border-radius:30px;
-
-
-border:3px solid var(--azul);
-
-
-box-shadow:
-
-0 0 30px var(--azul);
-
-
-}
-
-
-
-
-/* =========================
-RESULTADO
-========================= */
-
-
-
-.resultado{
-
-
-text-align:center;
-
-
-background:
-
-rgba(17,24,39,.85);
-
-
-padding:50px;
-
-
-border-radius:40px;
-
-
-animation:
-
-revelar 1s;
-
-
-}
-
-
-
-
-.resultado h2{
-
-
-font-family:'Bitcount Single';
-
-
-color:#A5F3FC;
-
-
-}
-
-
-
-
-#profissaoResultado{
-
-
-font-family:'Bitcount Single';
-
-
-font-size:2.8rem;
-
-
-margin:25px;
-
-
-color:var(--azul);
-
-
-text-shadow:
-
-0 0 20px var(--azul);
-
-
-}
-
-
-
-#descricaoResultado{
-
-
-font-size:1.1rem;
-
-
-color:var(--sub);
-
-
-margin-bottom:30px;
-
-
-}
-
-
-
-#fotoFinal{
-
-
 width:100%;
-
-
-max-width:450px;
-
-
-border-radius:30px;
-
-
-border:
-
-4px solid var(--azul);
-
-
-box-shadow:
-
-0 0 40px var(--azul);
-
-
+max-width:300px;
+margin-top:20px;
+border-radius:20px;
 }
 
-
-
-
-
-/* =========================
-UTILIDADES
-========================= */
-
-
+/* RESULTADO */
+#fotoFinal{
+width:100%;
+max-width:300px;
+margin-top:20px;
+border-radius:20px;
+}
 
 .oculto{
-
-display:none;
-
-}
-
-
-
-@keyframes aparecer{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:none;
-
-}
-
-
-}
-
-
-
-@keyframes revelar{
-
-
-from{
-
-opacity:0;
-
-transform:scale(.8);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:scale(1);
-
-}
-
-
-}
-
-
-
-
-
-/* MOBILE */
-
-
-@media(max-width:700px){
-
-
-
-.intro h1{
-
-
-font-size:2rem;
-
-
-}
-
-
-
-#pergunta{
-
-
-font-size:1.4rem;
-
-
-}
-
-
-
-.botoes{
-
-
-grid-template-columns:1fr;
-
-
-}
-
-
-
-.intro{
-
-
-padding:30px;
-
-
-}
-
-
-}
-.oculto{
-    display:none !important;
+display:none !important;
 }

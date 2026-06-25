@@ -2,101 +2,99 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Missão Profissional</title>
+    <title>Missão Profissional</title>
 
-<link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<main class="container">
+    <main class="container">
 
-<!-- INTRO -->
-<section id="intro" class="intro quadro">
-    <div class="icone-quadro">🚀</div>
+        <!-- INTRO -->
+        <section id="intro" class="intro quadro">
+            <div class="icone-quadro">🚀</div>
 
-    <h1>MISSÃO PROFISSIONAL</h1>
-    <h2>O futuro será revelado</h2>
+            <h1>MISSÃO PROFISSIONAL</h1>
+            <h2>O futuro será revelado</h2>
 
-    <p>Descubra seu perfil profissional em uma experiência interativa.</p>
+            <p>Descubra seu perfil profissional em uma experiência interativa.</p>
 
-    <button id="btnIniciar" class="btn-acao">Iniciar Missão</button>
-</section>
+            <button id="btnIniciar" class="btn-acao">Iniciar Missão</button>
+        </section>
 
-<!-- QUIZ -->
-<section id="quiz" class="quiz-card quadro oculto">
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-card quadro oculto">
 
-    <div class="progresso-texto">
-        MISSÃO <span id="atual">1</span> DE <span id="total">10</span>
-    </div>
+            <div class="progresso-texto">
+                MISSÃO <span id="atual">1</span> DE <span id="total">10</span>
+            </div>
 
-    <div class="barra">
-        <div id="barra" class="barra-preenchimento"></div>
-    </div>
+            <div class="barra">
+                <div id="barra" class="barra-preenchimento"></div>
+            </div>
 
-    <h2 id="pergunta">Carregando...</h2>
+            <h2 id="pergunta">Carregando...</h2>
 
-    <div class="botoes">
-        <button id="sim" class="resposta resposta-sim">👍 Sim</button>
-        <button id="nao" class="resposta resposta-nao">👎 Não</button>
-    </div>
+            <!-- Container onde os botões dinâmicos serão injetados -->
+            <div id="botoes-container" class="botoes"></div>
 
-</section>
+        </section>
 
-<!-- ANALISE -->
-<section id="analise" class="analise quadro oculto">
+        <!-- ANALISE -->
+        <section id="analise" class="analise quadro oculto">
 
-    <h1>🤖 Analisando Perfil</h1>
+            <h1>🤖 Analisando Perfil</h1>
 
-    <p>✓ Processando respostas</p>
-    <p>✓ Identificando padrões</p>
-    <p>✓ Preparando resultado</p>
+            <p>✓ Processando respostas</p>
+            <p>✓ Identificando padrões</p>
+            <p>✓ Preparando resultado</p>
 
-    <div class="spinner"></div>
+            <div class="spinner"></div>
 
-</section>
+        </section>
 
-<!-- CAMERA -->
-<section id="camera" class="camera quadro oculto">
+        <!-- CAMERA -->
+        <section id="camera" class="camera quadro oculto">
 
-    <h1>📸 Última etapa</h1>
+            <h1>📸 Última etapa</h1>
 
-    <p>Capture sua identidade para revelar seu perfil.</p>
+            <p>Capture sua identidade para revelar seu perfil.</p>
 
-    <button id="btnFoto" class="btn-acao">Tirar Foto</button>
+            <button id="btnFoto" class="btn-acao">Tirar Foto</button>
 
-    <input type="file" id="fotoInput" accept="image/*" capture="user" hidden>
+            <input type="file" id="fotoInput" accept="image/*" capture="user" hidden>
 
-    <div class="preview">
-        <img id="previewFoto">
-    </div>
+            <div class="preview">
+                <img id="previewFoto">
+            </div>
 
-</section>
+        </section>
 
-<!-- RESULTADO -->
-<section id="revelacao" class="resultado quadro oculto">
+        <!-- RESULTADO -->
+        <section id="revelacao" class="resultado quadro oculto">
 
-    <h1>🏆 Sua vocação é:</h1>
+            <h1>🏆 Sua vocação é:</h1>
 
-    <h2 id="profissaoResultado"></h2>
+            <h2 id="profissaoResultado"></h2>
 
-    <p id="descricaoResultado"></p>
+            <p id="descricaoResultado"></p>
 
-    <img id="fotoFinal">
+            <img id="fotoFinal">
 
-    <button class="btn-acao">Compartilhar</button>
+            <button class="btn-acao" onclick="location.reload()">Reiniciar</button>
 
-</section>
+        </section>
 
-</main>
+    </main>
 
-<script src="./js/perguntas.js"></script>
-<script src="./js/script.js"></script>
+    <script src="./js/perguntas.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 </html>

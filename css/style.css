@@ -1,134 +1,39 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins;
+/* Container que centraliza os botões dinâmicos */
+.botoes {
+    display: flex;
+    flex-direction: column; /* Coloca um botão abaixo do outro */
+    gap: 15px;             /* Espaçamento entre os botões */
+    margin-top: 25px;
+    width: 100%;
+    max-width: 400px;      /* Limita a largura para ficar centralizado */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-body{
-background:#6774ad;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
+/* Estilização padrão para os botões do Quiz */
+.botoes button {
+    padding: 15px 20px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: 2px solid #6c5ce7;
+    background-color: white;
+    color: #6c5ce7;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-/* QUADROS */
-.quadro{
-width:100%;
-max-width:800px;
-margin:auto;
-background:rgba(17,24,39,.75);
-border-radius:30px;
-padding:40px;
-border:1px solid rgba(150, 219, 228, 0.08);
-box-shadow:0 25px 80px rgba(0,0,0,.5);
-backdrop-filter:blur(20px);
-animation:entrar .6s ease;
+/* Efeito ao passar o mouse */
+.botoes button:hover {
+    background-color: #6c5ce7;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
 }
 
-@keyframes entrar{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1; transform:translateY(0);}
-}
-
-/* INTRO */
-.intro{
-text-align:center;
-}
-
-.icone-quadro{
-font-size:60px;
-margin-bottom:20px;
-}
-
-h1{
-font-size:2rem;
-margin-bottom:10px;
-}
-
-h2{
-color:#67e8f9;
-margin-bottom:20px;
-}
-
-/* BOTÕES */
-.btn-acao{
-background:linear-gradient(135deg,#6C63FF,#00E5FF);
-border:none;
-padding:15px 25px;
-border-radius:20px;
-color:white;
-font-weight:bold;
-cursor:pointer;
-margin-top:20px;
-}
-
-/* QUIZ */
-.botoes{
-display:flex;
-gap:10px;
-margin-top:20px;
-}
-
-.resposta{
-flex:1;
-padding:15px;
-border:none;
-border-radius:15px;
-cursor:pointer;
-}
-
-.resposta-sim{background:#10b981;color:white;}
-.resposta-nao{background:#ef4444;color:white;}
-
-.barra{
-height:10px;
-background:#1f2937;
-border-radius:10px;
-margin:15px 0;
-overflow:hidden;
-}
-
-.barra-preenchimento{
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#6C63FF,#00E5FF);
-}
-
-/* ANALISE */
-.spinner{
-width:50px;
-height:50px;
-border:5px solid #333;
-border-top:5px solid #00E5FF;
-border-radius:50%;
-margin:20px auto;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-to{transform:rotate(360deg);}
-}
-
-/* CAMERA */
-.preview img{
-width:100%;
-max-width:300px;
-margin-top:20px;
-border-radius:20px;
-}
-
-/* RESULTADO */
-#fotoFinal{
-width:100%;
-max-width:300px;
-margin-top:20px;
-border-radius:20px;
-}
-
-.oculto{
-display:none !important;
+/* Efeito ao clicar */
+.botoes button:active {
+    transform: translateY(0);
 }
